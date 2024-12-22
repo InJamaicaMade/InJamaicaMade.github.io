@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Derrick Morgan Videos - MadeInJa">
+    <title>Derrick Morgan Videos - MadeInJa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, black, green, gold);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+            .header h1 {
+                font-size: 2.5rem;
+                font-weight: 600;
+                background: linear-gradient(90deg, gold, green);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .header p {
+                margin-top: 0.5rem;
+                font-size: 1.2rem;
+            }
+
+        .back-button {
+            margin: 1rem;
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            background-color: gold;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+            .back-button:hover {
+                background-color: green;
+                color: white;
+            }
+
+        .video-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 1rem;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+            .video-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+            }
+
+            .video-card h2 {
+                font-size: 1.2rem;
+                margin: 0.5rem 0;
+                background: linear-gradient(90deg, gold, green);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .video-card p {
+                font-size: 1rem;
+                margin: 0.5rem 0;
+            }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: black;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+
+            .modal-content iframe {
+                width: 100%;
+                height: 300px;
+                border: none;
+                border-radius: 10px;
+            }
+
+        .close-button {
+            margin-top: 1rem;
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            background-color: gold;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+            .close-button:hover {
+                background-color: green;
+                color: white;
+            }
+    </style>
+</head>
+<body>
+    <header class="header">
+
+        <h1>Derrick Morgan</h1>
+        <p>Explore all the amazing content from Derrick Morgan</p>
+        <a href="playlists.html" class="back-button">Back to Playlists</a>
+    </header>
+
+    <section class="video-gallery">
+        <div class="video-card" onclick="openModal('https://www.youtube.com/embed/example1', 'Video Title 1', 'This is a description for Video 1.')">
+            <h2>Video Title 1</h2>
+            <p>This is a brief description of Video 1.</p>
+        </div>
+        <div class="video-card" onclick="openModal('https://www.youtube.com/embed/example2', 'Video Title 2', 'This is a description for Video 2.')">
+            <h2>Video Title 2</h2>
+            <p>This is a brief description of Video 2.</p>
+        </div>
+        <div class="video-card" onclick="openModal('https://www.youtube.com/embed/example3', 'Video Title 3', 'This is a description for Video 3.')">
+            <h2>Video Title 3</h2>
+            <p>This is a brief description of Video 3.</p>
+        </div>
+        
+        <div class="video-card" onclick="openModal('https://www.youtube.com/embed/example1', 'Video Title 1', 'This is a description for Video 1.')">
+            <h2>Video Title 1</h2>
+            <p>This is a brief description of Video 1.</p>
+        </div>
+        <div class="video-card" onclick="openModal('https://www.youtube.com/embed/example2', 'Video Title 2', 'This is a description for Video 2.')">
+            <h2>Video Title 2</h2>
+            <p>This is a brief description of Video 2.</p>
+        </div>
+        <div class="video-card" onclick="openModal('https://www.youtube.com/embed/example3', 'Video Title 3', 'This is a description for Video 3.')">
+            <h2>Video Title 3</h2>
+            <p>This is a brief description of Video 3.</p>
+        </div>
+        <!-- Add more video cards as needed -->
+    </section>
+
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <iframe id="modalVideo" allowfullscreen></iframe>
+            <h2 id="modalTitle">Video Title</h2>
+            <p id="modalDescription">Video Description</p>
+            <button class="close-button" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    
+    
+        <p>&copy; 2024 MadeInJa. All rights reserved.</p>
+    
+
+    
+</body>
+</html>
+<script>
+    function openModal(videoUrl, title, description) {
+        document.getElementById('videoModal').style.display = 'flex';
+        document.getElementById('modalVideo').src = videoUrl;
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalDescription').textContent = description;
+    }
+
+    function closeModal() {
+        document.getElementById('videoModal').style.display = 'none';
+        document.getElementById('modalVideo').src = '';
+    }
+</script>
