@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Derrick Morgan Videos - MadeInJa">
+    <title>Derrick Morgan Videos - MadeInJa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, black, green, gold);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+            .header h1 {
+                font-size: 2.5rem;
+                font-weight: 600;
+                background: linear-gradient(90deg, gold, green);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .header p {
+                margin-top: 0.5rem;
+                font-size: 1.2rem;
+            }
+
+        .back-button {
+            margin: 1rem;
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            background-color: gold;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+            .back-button:hover {
+                background-color: green;
+                color: white;
+            }
+
+        .video-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 1rem;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+            .video-card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+            }
+
+            .video-card h2 {
+                font-size: 1.2rem;
+                margin: 0.5rem 0;
+                background: linear-gradient(90deg, gold, green);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .video-card p {
+                font-size: 1rem;
+                margin: 0.5rem 0;
+            }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: black;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 90%; /* Limit to 90% of the screen width */
+            max-height: 80vh; /* Limit to 80% of the screen height */
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 20px; /* Padding at the bottom */
+        }
+
+            .modal-content iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
+        .close-button {
+            margin-top: 1rem;
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            background-color: gold;
+            padding: 0.8rem 1.2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+        }
+
+            .close-button:hover {
+                background-color: green;
+                color: white;
+            }
+
+        #loadingSpinner {
+            display: none;
+            color: white;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="playlists.html" class="back-button">Back to Playlists</a>
+        <h1>Derrick Morgan</h1>
+        <p>Explore all the amazing content from Derrick Morgan</p>
+    </header>
+
+    <section class="video-gallery">
+        <div class="video-card" onclick="openModal('https://drive.google.com/file/d/10D2GvtgahCx-zyyEzAfDke_nNr8fJyo5/preview', 'Derrick Morgan Live Performance', 'A classic Derrick Morgan performance. Enjoy!')">
+            <h2>Derrick Morgan Live Performance</h2>
+            <p>A classic Derrick Morgan performance. Enjoy!</p>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <div id="videoContent"></div> <!-- Content will be injected here -->
+            <h2 id="videoTitle"></h2>
+            <p id="videoDescription"></p>
+            <button onclick="toggleFullscreen()" style="padding: 10px 20px; background: green; color: white; border: none; cursor: pointer;">Fullscreen</button>
+            <button onclick="closeModal()" class="close-button">Close</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MadeInJa. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(videoUrl, title, description) {
+            // Embed Google Drive iframe
+            const embedCode = `<iframe src="${videoUrl}" width="640" height="480" allow="autoplay"></iframe>`;
+            document.getElementById('videoContent').innerHTML = embedCode;
+            document.getElementById('videoTitle').innerText = title;
+            document.getElementById('videoDescription').innerText = description;
+            document.getElementById('videoModal').style.display = 'flex'; // Show modal
+        }
+
+        function closeModal() {
+            document.getElementById('videoContent').innerHTML = ''; // Clear content to stop playback
+            document.getElementById('videoModal').style.display = 'none';
+        }
+
+        function toggleFullscreen() {
+            const iframe = document.querySelector('#videoContent iframe');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.webkitRequestFullscreen) { /* Safari */
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { /* IE11 */
+                iframe.msRequestFullscreen();
+            }
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

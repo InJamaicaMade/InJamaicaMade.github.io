@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Derrick Morgan Videos - MadeInJa">
+    <title>Shebada Videos - MadeInJa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="../Style/StyleSheet4.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <header class="header">
+
+        <h1>Queenie</h1>
+        <p>Explore all the amazing content from Queenie</p>
+        <a href="../Playlists.html" class="back-button">Back to Playlists</a>
+    </header>
+
+    <section class="video-gallery">
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/4zi720011ke8n6c1bwwmm/S1-Made-with-Clipchamp.mp4?rlkey=gebg37kthranl1c289pmxy7fr&raw=1', 'Shebada Cuss Digicel', '')">
+            <h2>Shebada Cuss Digicel</h2>
+            <p>December 21, 2024!</p>
+        </div>
+    </section>
+
+    <section class="video-gallery">
+        <div class="video-card" onclick="openModal('https://drive.google.com/uc?id=10D2GvtgahCx-zyyEzAfDke_nNr8fJyo5&export=download', 'Derrick Morgan Live Performance', 'A classic Derrick Morgan performance. Enjoy!')">
+            <h2>Derrick Morgan Live Performance</h2>
+            <p>A classic Derrick Morgan performance. Enjoy!</p>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1000; color: white; padding: 20px; box-sizing: border-box;">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <video id="videoElement" width="100%" height="400px" controls controlslist="nodownload" style="margin-bottom: 20px; background: black;" playsinline>
+                Your browser does not support the video tag.
+            </video>
+            <h2 id="videoTitle"></h2>
+            <p id="videoDescription"></p>
+            <button onclick="toggleFullscreen()" style="padding: 10px 20px; background: green; color: white; border: none; cursor: pointer;">Fullscreen</button>
+            <button onclick="closeModal()" style="padding: 10px 20px; background: red; color: white; border: none; cursor: pointer;">Close</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 MadeInJa. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(videoUrl, title, description) {
+            const videoElement = document.getElementById('videoElement');
+            videoElement.src = videoUrl;
+            document.getElementById('videoTitle').innerText = title;
+            document.getElementById('videoDescription').innerText = description;
+            document.getElementById('videoModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            const videoElement = document.getElementById('videoElement');
+            videoElement.pause(); // Stop the video
+            videoElement.src = ''; // Clear the source
+            document.getElementById('videoModal').style.display = 'none';
+        }
+
+        function toggleFullscreen() {
+            const videoElement = document.getElementById('videoElement');
+            if (videoElement.requestFullscreen) {
+                videoElement.requestFullscreen();
+            } else if (videoElement.mozRequestFullScreen) { // Firefox
+                videoElement.mozRequestFullScreen();
+            } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                videoElement.webkitRequestFullscreen();
+            } else if (videoElement.msRequestFullscreen) { // IE/Edge
+                videoElement.msRequestFullscreen();
+            }
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
