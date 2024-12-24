@@ -1,4 +1,22 @@
-﻿
+﻿/* Styling for the search bar */
+.search-bar-container {
+    margin: 20px;
+    text-align: center;
+}
+
+.search-bar {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.creator-card {
+    display: none; /* Hide all cards initially */
+}
+
+    .creator-card.visible {
+        display: block; /* Show cards matching the search */
+    }
 * {
     margin: 0;
     padding: 0;

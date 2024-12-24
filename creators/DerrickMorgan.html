@@ -8,7 +8,6 @@
     <title>Derrick Morgan Videos - MadeInJa</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="../style/StyleSheet4.css" rel="stylesheet" />
-
 </head>
 <body>
     <header class="header">
@@ -18,25 +17,42 @@
     </header>
 
     <section class="video-gallery">
-        <div class="video-card" onclick="openModal('https://1drv.ms/v/s!AroZFLSAnmL0bHWVLKrPkC3SKIw?e=jPiihF', 'Derrick Morgan Live Performance', 'A classic Derrick Morgan performance. Enjoy!')">
-            <h2>Derrick Morgan Live Performance</h2>
-            <p>A classic Derrick Morgan performance. Enjoy!</p>
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/mlxyqgo9tpvskhvluouev/Snaptik.app_7451381591265316102.mp4?rlkey=kddo77kq5ijm3zbb0ui7psvvx&st=hneqg625&dl=0&raw=1', 'Derrick Morgan Meme', '')">
+            <h2>Derrick Morgan Meme</h2>
+            <p>Everyweh mi tun macka jook mi</p>
+        </div>
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/xku8sqsd38zsknuvvy0kx/Snaptik.app_7448418978369752350.mp4?rlkey=jm71ebvgtb3muxoibzgy4sup7&st=k8lcc57e&dl=0&raw=1', 'Derrick Morgan Meme', '')">
+            <h2>Derrick Morgan Meme</h2>
+            <p>U mouth wah wash out</p>
+        </div>
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/4g8kahnei1td8t90ewd4v/Snaptik.app_7190503540761169194.mp4?rlkey=y0t9bzepkn3ekzwkjloskiqf6&st=aesehm0b&dl=0&raw=1', 'Derrick Morgan Meme', '')">
+            <h2>Derrick Morgan Meme</h2>
+            <p>Mi nuh shit inna church</p>
+        </div>
+        
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/qtqt7oiajdimfhq65us01/Snaptik.app_7448797269140360454.mp4?rlkey=k52xls15wbbffd3abkes0be38&st=addzs2qf&dl=0&raw=1', 'Derrick Morgan in the Studio', '')">
+            <h2>Derrick Morgan in the Studio</h2>
+            <p>Murda fi Samantha</p>
+        </div>
+        
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/93ej1gz5dp80hzltrwak4/Snaptik.app_7240516986327813382.mp4?rlkey=rrx8j35l7bqks61iqg2s0m60u&st=a8cend1k&dl=0&raw=1', 'Derrick Morgan Meme', '')">
+            <h2>Derrick Morgan Meme</h2>
+            <p>Act like a big woman</p>
         </div>
     </section>
 
     <!-- Modal -->
-    <div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1000; color: white; padding: 20px; box-sizing: border-box;">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <video id="videoElement" width="100%" height="400px" controls controlslist="nodownload" style="margin-bottom: 20px; background: black;" playsinline>
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <video id="videoElement" width="100%" height="400px" controls controlslist="nodownload" playsinline>
                 Your browser does not support the video tag.
             </video>
             <h2 id="videoTitle"></h2>
             <p id="videoDescription"></p>
-            <button onclick="toggleFullscreen()" style="padding: 10px 20px; background: green; color: white; border: none; cursor: pointer;">Fullscreen</button>
-            <button onclick="closeModal()" style="padding: 10px 20px; background: red; color: white; border: none; cursor: pointer;">Close</button>
+            <button onclick="toggleFullscreen()" class="close-button">Fullscreen</button>
+            <button onclick="closeModal()" class="close-button">Close</button>
         </div>
     </div>
-
 
     <footer>
         <p>&copy; 2024 MadeInJa. All rights reserved.</p>
@@ -48,7 +64,7 @@
             videoElement.src = videoUrl;
             document.getElementById('videoTitle').innerText = title;
             document.getElementById('videoDescription').innerText = description;
-            document.getElementById('videoModal').style.display = 'block';
+            document.getElementById('videoModal').style.display = 'flex';
         }
 
         function closeModal() {

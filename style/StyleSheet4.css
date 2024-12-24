@@ -1,5 +1,4 @@
-﻿
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -60,8 +59,8 @@ body {
 .video-card {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
-    padding: 1rem;
-    width: 300px;
+    padding: 1.5rem;
+    width: 280px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -74,8 +73,8 @@ body {
     }
 
     .video-card h2 {
-        font-size: 1.2rem;
-        margin: 0.5rem 0;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
         background: linear-gradient(90deg, gold, green);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -83,8 +82,20 @@ body {
 
     .video-card p {
         font-size: 1rem;
-        margin: 0.5rem 0;
+        margin-bottom: 1rem;
     }
+
+@media (max-width: 768px) {
+    .video-card {
+        width: calc(50% - 2rem); /* 2 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-card {
+        width: 100%; /* 1 card per row on small screens */
+    }
+}
 
 .modal {
     display: none;
@@ -139,4 +150,3 @@ footer {
     padding: 1rem;
     background: rgba(0, 0, 0, 0.7);
 }
-

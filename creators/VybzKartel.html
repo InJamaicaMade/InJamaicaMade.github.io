@@ -2,43 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Derrick Morgan Videos - MadeInJa">
+    <meta name="description" content="Shebada Videos - MadeInJa">
     <title>Vybz Kartel Videos - MadeInJa</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="../style/StyleSheet4.css" rel="stylesheet" />
 
-
 </head>
 <body>
     <header class="header">
-
         <h1>Vybz Kartel</h1>
         <p>Explore all the amazing content from Vybz Kartel</p>
-        <a href="playlists.html" class="back-button">Back to Playlists</a>
+        <a href="../Playlists.html" class="back-button">Back to Playlists</a>
     </header>
 
     <section class="video-gallery">
-        <div class="video-card" onclick="openModal('https://player.vimeo.com/video/1041806853?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479', 'Derrick Morgan Live Performance', 'A classic Derrick Morgan performance. Enjoy!')">
-            <h2>Derrick Morgan Live Performance</h2>
-            <p>A classic Derrick Morgan performance. Enjoy!</p>
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/4zi720011ke8n6c1bwwmm/S1-Made-with-Clipchamp.mp4?rlkey=gebg37kthranl1c289pmxy7fr&raw=1', 'Shebada Cuss Digicel', '')">
+            <h2>Shebada Cuss Digicel</h2>
+        </div>
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/1bvhy2eny7o7oenjx58ra/video.mp4?rlkey=a61c3y57kuuy3thut1b962bam&st=usa432ux&dl=0&raw=1', 'Shebada Meme', '')">
+            <h2>Shebada Meme</h2>
+            <p>Nobody not talking</p>
         </div>
     </section>
 
     <!-- Modal -->
-    <div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1000; color: white; padding: 20px; box-sizing: border-box;">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <video id="videoElement" width="100%" height="400px" controls controlslist="nodownload" style="margin-bottom: 20px; background: black;" playsinline>
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <video id="videoElement" width="100%" height="400px" controls controlslist="nodownload" playsinline>
                 Your browser does not support the video tag.
             </video>
             <h2 id="videoTitle"></h2>
             <p id="videoDescription"></p>
-            <button onclick="toggleFullscreen()" style="padding: 10px 20px; background: green; color: white; border: none; cursor: pointer;">Fullscreen</button>
-            <button onclick="closeModal()" style="padding: 10px 20px; background: red; color: white; border: none; cursor: pointer;">Close</button>
+            <button onclick="toggleFullscreen()" class="close-button">Fullscreen</button>
+            <button onclick="closeModal()" class="close-button">Close</button>
         </div>
     </div>
-
 
     <footer>
         <p>&copy; 2024 MadeInJa. All rights reserved.</p>
@@ -50,7 +50,7 @@
             videoElement.src = videoUrl;
             document.getElementById('videoTitle').innerText = title;
             document.getElementById('videoDescription').innerText = description;
-            document.getElementById('videoModal').style.display = 'block';
+            document.getElementById('videoModal').style.display = 'flex';
         }
 
         function closeModal() {

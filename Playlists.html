@@ -22,58 +22,101 @@
     <link href="style/StyleSheet2.css" rel="stylesheet" />
     <link href="style/StyleSheet1.css" rel="stylesheet" />
 
+    <style>
+        /* Styling for the search bar */
+        .search-bar-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .search-bar {
+            width: 30%;
+            padding: 10px;
+            font-size: 16px;
+            background: linear-gradient(135deg, black, green, gold);
+            border: hidden;
+            color: white;
+        }
+
+        /* All cards will be visible by default */
+        .creator-card {
+            display: block;
+        }
+
+            /* Hide cards that do not match the search */
+            .creator-card.hidden {
+                display: none;
+            }
+    </style>
 </head>
 <body>
     <header class="header">
-
         <h1>Our Content Creators</h1>
-        
         <a href="/" class="back-button">Back to Home</a>
     </header>
+
+    <!-- Search Bar -->
+    <div class="search-bar-container">
+        <input type="text" id="searchBar" class="search-bar" placeholder="Search for a creator..." oninput="filterCreators()">
+    </div>
 
     <section class="creators-container">
         <div class="creator-card">
             <h2>Derrick Morgan</h2>
-            <p>Description or tagline for this creator.</p>
+            <p>Tiktoker</p>
             <a href="creators/DerrickMorgan.html">View Content</a>
         </div>
         <div class="creator-card">
             <h2>Queenie</h2>
-            <p>Description or tagline for this creator.</p>
+            <p>Dancehall artiste & Tiktoker</p>
             <a href="creators/Queenie.html">View Content</a>
         </div>
         <div class="creator-card">
             <h2>Shebada</h2>
-            <p>Description or tagline for this creator.</p>
+            <p>Actor & Tiktoker</p>
             <a href="creators/Shebada.html">View Content</a>
         </div>
-
         <div class="creator-card">
             <h2>Rosealee</h2>
-            <p>Description or tagline for this creator.</p>
+            <p>Tiktoker</p>
             <a href="creators/Rosealee.html">View Content</a>
         </div>
-        
         <div class="creator-card">
             <h2>Vybz Kartel</h2>
-            <p>Description or tagline for this creator.</p>
+            <p>Dancehall Artiste</p>
             <a href="creators/VybzKartel.html">View Content</a>
         </div>
-
+        <div class="creator-card">
+            <h2>Crime Minister</h2>
+            <p>Social Media Personality</p>
+            <a href="creators/Crime-Minister.html">View Content</a>
+        </div>
         <div class="creator-card">
             <h2>Others</h2>
-            <p>Description or tagline for this creator.</p>
+            <p>Miscellaneous</p>
             <a href="#">View Content</a>
         </div>
-
-
-
     </section>
-
-    <br /><br /><br /><br /><br /><br />
 
     <footer>
         <p>&copy; 2024 MadeInJa. All rights reserved.</p>
     </footer>
+
+    <script>
+        function filterCreators() {
+            const searchInput = document.getElementById('searchBar').value.toLowerCase();
+            const cards = document.querySelectorAll('.creator-card');
+
+            cards.forEach(card => {
+                const creatorName = card.querySelector('h2').textContent.toLowerCase();
+                // If the creator's name matches the search input, show the card, otherwise hide it
+                if (creatorName.includes(searchInput)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
