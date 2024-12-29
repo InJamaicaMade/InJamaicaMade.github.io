@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGFYB3DX1C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-WGFYB3DX1C');
+    </script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="google-site-verification" content="_tlvtjqFT1OiTJbgwrthCi6VKRpfT5n7QSbKtX_dF88" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MadeInJa - Jamaican Funny Videos. Pure Vibes, Pure Laughter!">
+    <title>MadeInJa - Jamaican Funny Videos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="style/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="splash-container">
+        <h1 class="logo">MadeInJamaica</h1>
+        <p class="tagline">Video Database</p>
+        <p>This allows the user to search the entire video database</p>
+
+        <!-- Search Bar -->
+        <div class="search-bar-container">
+            <input type="text" id="searchBar" class="search-bar" placeholder="Search by creator name or description..." oninput="filterVideos()">
+        </div>
+
+        <!-- Search Results -->
+        <section id="searchResults">
+            <!-- Results will appear here dynamically -->
+        </section>
+
+        <footer>
+            <p>&copy; 2024 MadeInJa. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sample video data
+        const videoData = [
+            { creator: "Derrick Morgan", description: "Tiktoker and funny video creator with awesome Jamaican vibes!", link: "video/DerrickMorgan.html" },
+            { creator: "Queenie", description: "Dancehall artiste and Tiktoker, known for hilarious skits!", link: "video/Queenie.html" },
+            { creator: "Shebada", description: "Actor & Tiktoker, creating some of the funniest content on the island!", link: "video/Shebada.html" },
+            { creator: "Rosealee", description: "Popular for comedic Tiktok videos and laugh-out-loud moments.", link: "video/Rosealee.html" },
+            { creator: "Vybz Kartel", description: "Known for his music and now bringing humor to his fans!", link: "video/VybzKartel.html" }
+        ];
+
+        function filterVideos() {
+            const searchInput = document.getElementById('searchBar').value.toLowerCase();
+            const resultsContainer = document.getElementById('searchResults');
+
+            // Clear previous results
+            resultsContainer.innerHTML = '';
+
+            // Filter data based on search input
+            const filteredData = videoData.filter(item =>
+                item.creator.toLowerCase().includes(searchInput) ||
+                item.description.toLowerCase().includes(searchInput)
+            );
+
+            // Display filtered results
+            if (filteredData.length > 0) {
+                filteredData.forEach(item => {
+                    const resultDiv = document.createElement('div');
+                    resultDiv.classList.add('result-item');
+                    resultDiv.innerHTML = `
+                            <h3>${item.creator}</h3>
+                            <p>${item.description}</p>
+                            <a href="${item.link}">View Video</a>
+                        `;
+                    resultsContainer.appendChild(resultDiv);
+                });
+            } else {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            }
+        }
+    </script>
+
+</body>
+</html>

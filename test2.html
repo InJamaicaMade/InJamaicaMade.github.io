@@ -2,185 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Derrick Morgan Videos - MadeInJa">
-    <title>Derrick Morgan Videos - MadeInJa</title>
+    <meta name="description" content="Shebada Videos - MadeInJa">
+    <title>Shebada Videos - MadeInJa</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link href="../style/StyleSheet4.css" rel="stylesheet" />
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, black, green, gold);
-            color: white;
-            overflow-x: hidden;
-        }
-
-        .header {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: rgba(0, 0, 0, 0.7);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-            .header h1 {
-                font-size: 2.5rem;
-                font-weight: 600;
-                background: linear-gradient(90deg, gold, green);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-
-            .header p {
-                margin-top: 0.5rem;
-                font-size: 1.2rem;
-            }
-
-        .back-button {
-            margin: 1rem;
-            display: inline-block;
-            text-decoration: none;
-            color: black;
-            background-color: gold;
-            padding: 0.8rem 1.2rem;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-            .back-button:hover {
-                background-color: green;
-                color: white;
-            }
-
-        .video-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 2rem;
-            gap: 2rem;
-        }
-
-        .video-card {
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            padding: 1rem;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-            .video-card:hover {
-                transform: scale(1.05);
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
-            }
-
-            .video-card h2 {
-                font-size: 1.2rem;
-                margin: 0.5rem 0;
-                background: linear-gradient(90deg, gold, green);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-
-            .video-card p {
-                font-size: 1rem;
-                margin: 0.5rem 0;
-            }
-
-        /* Modal styling */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            padding: 20px;
-            overflow: auto; /* Allow scrolling if content overflows */
-        }
-
-        .modal-content {
-            background: black;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 90%; /* Limit to 90% of the screen width */
-            max-height: 80vh; /* Limit to 80% of the screen height */
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column; /* Stack content vertically */
-            justify-content: center;
-            align-items: center;
-            padding: 20px; /* Padding inside modal */
-        }
-
-            .modal-content iframe {
-                width: 100%;
-                height: 100%;
-                border: none;
-            }
-
-        .close-button {
-            margin-top: 1rem;
-            display: inline-block;
-            text-decoration: none;
-            color: black;
-            background-color: gold;
-            padding: 0.8rem 1.2rem;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background-color 0.3s, color 0.3s;
-            cursor: pointer;
-        }
-
-            .close-button:hover {
-                background-color: green;
-                color: white;
-            }
-
-        #loadingSpinner {
-            display: none;
-            color: white;
-            font-size: 1.2rem;
-            margin-top: 1rem;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
-        <a href="playlists.html" class="back-button">Back to Playlists</a>
-        <h1>Derrick Morgan</h1>
-        <p>Explore all the amazing content from Derrick Morgan</p>
+        <h1>Keith "Shebada" Ramsay</h1>
+        <p>Explore all the amazing content from Shebada</p>
+        <a href="../Playlists.html" class="back-button">Back to Playlists</a>
     </header>
 
     <section class="video-gallery">
-        <div class="video-card" onclick="openModal('https://1drv.ms/v/s!AroZFLSAnmL0bHWVLKrPkC3SKIw?e=jPiihF', 'Derrick Morgan Live Performance', 'A classic Derrick Morgan performance. Enjoy!')">
-            <h2>Derrick Morgan Live Performance</h2>
-            <p>A classic Derrick Morgan performance. Enjoy!</p>
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/4zi720011ke8n6c1bwwmm/S1-Made-with-Clipchamp.mp4?rlkey=gebg37kthranl1c289pmxy7fr&raw=1', 'Shebada Cuss Digicel', '')">
+            <h2>Shebada Video</h2>
+            <p>Shebada Cuss Digicel</p>
         </div>
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/1bvhy2eny7o7oenjx58ra/video.mp4?rlkey=a61c3y57kuuy3thut1b962bam&st=usa432ux&dl=0&raw=1', 'Shebada Meme', '')">
+            <h2>Shebada Meme</h2>
+            <p>Nobody not talking</p>
+        </div><div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/dly8omhoh63gioxmq5w7o/Snaptik.app_6810083780544498950.mp4?rlkey=h2yuxmhizuw1550z37qxq2y1h&st=mp3hmigl&dl=0&raw=1', 'Shebada Meme', '')">
+            <h2>Shebada Meme</h2>
+            <p>Yuh man owe me credit</p>
+        </div>
+
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/h26kgfk70aqmnig2awxbb/Snaptik.app_7434575396323986720.mp4?rlkey=igstmkh8l6wznba02pg5f5ehn&st=r5fa0ojf&dl=0&raw=1', 'Shebada Talking about Rosealee phone falling', '')">
+            <h2>Shebada Video</h2>
+            <p>Shebada Talking about Rosealee phone falling</p>
+
+        </div>
+
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/hycsocwcaucr0qb3dapwd/Snaptik.app_7445521021584641285.mp4?rlkey=4zujylko8kn4i1dgotthh4htq&st=oydg3mt4&dl=0&raw=1', 'Shebada Meme', '')">
+            <h2>Shebada Meme</h2>
+            <p>Shebada dancing to Cardi B song</p>
+
+        </div>
+        <div class="video-card" onclick="openModal('https://www.dropbox.com/scl/fi/o284bxbcvcsbqmqlw5dk6/Snaptik.app_7358065555858836741.mp4?rlkey=i9p76w8ub27gqd6ey8xz89txc&st=7pi7en3j&dl=0&raw=1', 'Shebada Meme', '')">
+            <h2>Shebada Meme</h2>
+            <p>A you name Beyonce and yuh head looks suh</p>
+
+        </div>
+
+        <div class="video-card" onclick="openModal('https://youtu.be/doXP5_6ATUU', 'Shebada Meme', 'A you name Beyonce and yuh head looks suh')">
+            <h2>Shebada Meme</h2>
+            <p>A you name Beyonce and yuh head looks suh</p>
+        </div>
+
+
     </section>
 
     <!-- Modal -->
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <div id="videoContent"></div> <!-- Content will be injected here -->
-            <h2 id="videoTitle"></h2>
-            <p id="videoDescription"></p>
-            <button onclick="toggleFullscreen()" style="padding: 10px 20px; background: green; color: white; border: none; cursor: pointer;">Fullscreen</button>
-            <button onclick="closeModal()" class="close-button">Close</button>
-        </div>
+    <<div id="videoModal" class="modal">
+        <div class="modal-content"></div>
     </div>
+
 
     <footer>
         <p>&copy; 2024 MadeInJa. All rights reserved.</p>
@@ -188,27 +67,89 @@
 
     <script>
         function openModal(videoUrl, title, description) {
-            // Embed Google Drive iframe
-            const embedCode = `<iframe src="${videoUrl}" width="640" height="480" allow="autoplay"></iframe>`;
-            document.getElementById('videoContent').innerHTML = embedCode;
-            document.getElementById('videoTitle').innerText = title;
-            document.getElementById('videoDescription').innerText = description;
-            document.getElementById('videoModal').style.display = 'flex'; // Show modal
+            const videoElement = document.getElementById('videoElement');
+            const modalContent = document.querySelector('.modal-content');
+
+            // Clear existing children (if switching from one type of video to another)
+            while (modalContent.firstChild) {
+                modalContent.removeChild(modalContent.firstChild);
+            }
+
+            // Add title
+            const videoTitle = document.createElement('h2');
+            videoTitle.id = 'videoTitle';
+            videoTitle.innerText = title;
+            modalContent.appendChild(videoTitle);
+
+            // Check if the video URL is a YouTube link
+            if (videoUrl.includes('youtu.be') || videoUrl.includes('youtube.com')) {
+                const embedUrl = videoUrl
+                    .replace('https://youtu.be/', 'https://www.youtube.com/embed/')
+                    .replace('watch?v=', 'embed/');
+
+                // Create iframe for YouTube video
+                const iframe = document.createElement('iframe');
+                iframe.src = embedUrl;
+                iframe.width = '100%';
+                iframe.height = '400px';
+                iframe.setAttribute('frameborder', '0');
+                iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                iframe.setAttribute('allowfullscreen', true);
+                modalContent.appendChild(iframe);
+            } else {
+                // Use <video> tag for non-YouTube videos
+                const videoTag = document.createElement('video');
+                videoTag.id = 'videoElement';
+                videoTag.src = videoUrl;
+                videoTag.width = '100%';
+                videoTag.height = '400px';
+                videoTag.controls = true;
+                videoTag.controlsList = 'nodownload';
+                videoTag.playsInline = true;
+                modalContent.appendChild(videoTag);
+            }
+
+            // Add description
+            const videoDescription = document.createElement('p');
+            videoDescription.id = 'videoDescription';
+            videoDescription.innerText = description;
+            modalContent.appendChild(videoDescription);
+
+            // Add fullscreen button
+            const fullscreenButton = document.createElement('button');
+            fullscreenButton.className = 'close-button';
+            fullscreenButton.innerText = 'Fullscreen';
+            fullscreenButton.onclick = toggleFullscreen;
+            modalContent.appendChild(fullscreenButton);
+
+            // Add close button
+            const closeButton = document.createElement('button');
+            closeButton.className = 'close-button';
+            closeButton.innerText = 'Close';
+            closeButton.onclick = closeModal;
+            modalContent.appendChild(closeButton);
+
+            document.getElementById('videoModal').style.display = 'flex';
         }
 
+
         function closeModal() {
-            document.getElementById('videoContent').innerHTML = ''; // Clear content to stop playback
+            const videoElement = document.getElementById('videoElement');
+            videoElement.pause(); // Stop the video
+            videoElement.src = ''; // Clear the source
             document.getElementById('videoModal').style.display = 'none';
         }
 
         function toggleFullscreen() {
-            const iframe = document.querySelector('#videoContent iframe');
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.webkitRequestFullscreen) { /* Safari */
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { /* IE11 */
-                iframe.msRequestFullscreen();
+            const videoElement = document.getElementById('videoElement');
+            if (videoElement.requestFullscreen) {
+                videoElement.requestFullscreen();
+            } else if (videoElement.mozRequestFullScreen) { // Firefox
+                videoElement.mozRequestFullScreen();
+            } else if (videoElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                videoElement.webkitRequestFullscreen();
+            } else if (videoElement.msRequestFullscreen) { // IE/Edge
+                videoElement.msRequestFullscreen();
             }
         }
 
@@ -217,6 +158,11 @@
                 closeModal();
             }
         });
+
+
+        const encodedUrl = encodeURIComponent('https://youtu.be/doXP5_6ATUU?si=DnpiFphR6fB7EfzE0&raw=1');
+        openModal(encodedUrl, 'Shebada Meme', '');
+
     </script>
 </body>
 </html>
